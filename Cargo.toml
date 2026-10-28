@@ -1,0 +1,19 @@
+[package]
+name = "wincache-cleaner"
+version = "0.2.0"
+edition = "2021"
+description = "Limpador conservador de caches do Windows e Microsoft Edge"
+license = "MIT"
+build = "build.rs"
+
+[dependencies]
+eframe = { version = "0.29", default-features = true }
+
+[build-dependencies]
+winres = "0.1"
+
+[profile.release]
+opt-level = "s"
+lto = "thin"
+codegen-units = 1
+strip = true
